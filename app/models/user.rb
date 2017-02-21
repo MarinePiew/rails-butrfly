@@ -6,4 +6,9 @@ class User < ApplicationRecord
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
+  enum category: [:family, :au_pair]
+  attr_accessor :email, :password, :password_confirmation
 end
+
+
+
