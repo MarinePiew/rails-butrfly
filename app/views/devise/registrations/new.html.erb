@@ -8,7 +8,7 @@
     <%= f.input :last_name, required: true %>
     <%= f.input :gender, collection: ["female", "male"], required: true %>
     <%= f.input :nationality, collection: ["Albanie", "Allemagne", "Andorre", "Autriche-Hongrie", "Belgique", "Bulgarie", "Danemark", "Espagne", "France", "Grèce", "Italie", "Liechtenstein", "Luxembourg", "Monaco", "Monténégro", "Norvège", "Pays-Bas", "Portugal", "Roumanie", "Royaume-Uni", "Russie", "Serbie", "Suède", "Suisse"] %>
-    <%= f.input :category, collection: ["Family", "Au Pair"], as: :radio_buttons%>
+    <%= f.input :category, collection: [["Family", :family], ["Au Pair", :au_pair]], as: :radio_buttons%>
     <%= f.input :email, required: true %>
     <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
     <%= f.input :password_confirmation, required: true %>
