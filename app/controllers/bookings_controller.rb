@@ -15,9 +15,9 @@ class BookingsController < ApplicationController
     @booking.au_pair = User.find(params[:au_pair_id])
     @booking.family = current_user
     if @booking.save
-      redirect_to au_pairs_path
+      redirect_to au_pairs_path,  notice: "you successfully booked your au pair, you can get in touch with her!"
     else
-      render :new
+      render 'au_pairs/show', alert: "Oups! You didn't book anybody. Have a look again!"
     end
   end
 

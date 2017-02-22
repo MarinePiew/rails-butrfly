@@ -1,18 +1,21 @@
 <div class="container">
   <div class="row">
     <% @aupairs.each do |aupair| %>
-    <div class="col-xs-12 col-sm-4">
-      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('images/aupair-family.jpg');">
-        <div class="card-category"><strong><%= aupair.last_name %></strong> <%= aupair.first_name %></div>
+    <div class="col-xs-4">
+      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('images/telechargement.jpeg'),">
+        <div class="card-category">
+          <strong><%= aupair.last_name %></strong> <%= aupair.first_name %>
+        </div>
         <div class="card-description">
           <h2><%= aupair.gender %></h2>
           <p><%= aupair.nationality %></p>
         </div>
         <div class="card-user">
-          <img src="images/papillard.jpeg" class="avatar"/>
+          <%= image_tag "téléchargement.jpeg", class: "avatar" %>
         </div>
-        <a href="#" class="card-link"></a>
+        <%= link_to 'Let me see', au_pair_path(aupair), class: 'btn btn-primary' %>
       </div>
+    </div>
     <% end %>
   </div>
 </div>
