@@ -17,7 +17,7 @@ class BookingsController < ApplicationController
     if @booking.save
       redirect_to au_pairs_path
     else
-      render :new
+      render 'au_pairs/show'
     end
   end
 
