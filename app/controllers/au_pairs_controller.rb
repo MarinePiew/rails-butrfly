@@ -7,5 +7,4 @@ class AuPairsController < ApplicationController
   def show
     @aupair = User.find(params[:id])
   end
-
 end

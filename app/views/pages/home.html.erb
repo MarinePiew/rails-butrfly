@@ -1,23 +1,60 @@
 
 
-<div class="banner" style="background: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('images/aupair-family.jpg');">
-      <div class="banner-content">
-        <h1>BUTRFLY</h1>
-        <p>We match the right au pair with the right family</p>
-        <div>
-        <p>What are you looking for?</p>
-          <h2>Search</h2>
+<div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('http://algoos.com/wp-content/uploads/2015/06/au-pair2.jpg');">
 
-          <%= simple_form_for :search, :url => au_pairs_path, :method => :get do |f| %>
-          <%= f.error_notification %>
+  <div class="banner-content text-center">
+    <h1>BUTRFLY</h1>
+    <p>"We match the right au pair with the right family"</p>
+  </div>
+  <div class="container-search text-center list-inline">
+    <h2>What are you looking for?</h2>
+    <%= simple_form_for :search, url: au_pairs_path, :method => 'get', html: { class: "form-inline" } do |f| %>
+      <%= f.input :gender, label: false, prompt: "Gender",
+      collection: ["female", "male"], required: true %>
+      <%= f.input :nationality, label: false, prompt: "Nationality",
+      collection: ["Albanie", "Allemagne", "Andorre", "Autriche-Hongrie", "Belgique", "Bulgarie", "Danemark", "Espagne", "France", "Grèce", "Italie", "Liechtenstein", "Luxembourg", "Monaco", "Monténégro", "Norvège", "Pays-Bas", "Portugal", "Roumanie", "Royaume-Uni", "Russie", "Serbie", "Suède", "Suisse"], required: true %>
+      <%= f.submit "Find", :class => "btn" %>
+    <% end %>
+  </div>
+</div>
 
-            <div class="form-inputs">
+<div class="container text-center padded features">
+  <div class="row">
+    <div class="col-xs-12 col-sm-6 col-md-3">
+    <%= image_tag("Amelie_Poulain.png") %>
+      <h2>Tell us about you</h2>
+      <p>Please sign up for us to help you out!</p>
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-3">
+      <%= image_tag("Crane.png") %>
+      <h2>Select your preferences</h2>
+      <p>Through 3 clicks, you could access the matching Au Pair profiles</p>
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-3">
+      <%= image_tag("Travis.png") %>
+      <h2>Chose your favorite</h2>
+      <p>Click on a profile and book.</p>
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-3">
+      <%= image_tag("Trust.png") %>
+      <h2>Welcome your Au Pair </h2>
+      <p>Live a new experience and give your family the opportunity to open his mind</p>
+    </div>
+  </div>
+</div>
 
-        <%= f.input :gender, collection: ["female", "male"], required: true %>
-        <%= f.input :nationality, collection: ["Albanie", "Allemagne", "Andorre", "Autriche-Hongrie", "Belgique", "Bulgarie", "Danemark", "Espagne", "France", "Grèce", "Italie", "Liechtenstein", "Luxembourg", "Monaco", "Monténégro", "Norvège", "Pays-Bas", "Portugal", "Roumanie", "Royaume-Uni", "Russie", "Serbie", "Suède", "Suisse"] %>
-        <%= f.input :category, collection: ["Family", "Au Pair"], as: :radio_buttons%>
-          </div>
-        </div>
-        <% end %>
+<div class="hp-feature">
+  <div class="container hp-feature">
+    <div class="row">
+      <div class="col-md-4">
+        <h2>You want to become Au Pair ?</h2>
       </div>
+      <div class="col-md-4">
+      <p>Join the community of passionate and find your ideal Host Family !</p>
+      </div>
+      <div class="col-md-4">
+      <a href="#" class="btn-medium" id="Aupair">Sign up</a>
+      </div>
+    </div>
+  </div>
 </div>

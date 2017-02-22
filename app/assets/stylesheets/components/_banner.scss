@@ -1,0 +1,63 @@
+.banner {
+  color: white;
+  text-align: center;
+  height: 90vh;
+  /* if you have a 70px navbar => height: calc(100vh - 70px); */
+  background-size: cover !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.banner h1 {
+  font-size: 50px;
+  font-weight: bold;
+  text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
+}
+
+.banner h2 {
+  font-size: 25px;
+  font-weight: lighter;
+  text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
+}
+
+.banner p {
+  font-size: 20px;
+  font-weight: lighter;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 20px;
+}
+
+.container-search {
+  position: absolute;
+  bottom: 120px;
+}
+
+.container-search select {
+
+}
+
+.hp-feature {
+  background-color: rgb(247, 246, 241);
+  border-radius: 5px;
+  text-align: center;
+  padding: 20px 10px;
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 90%;
+  position: relative;
+}
+
+.hp-feature p {
+  color: rgb(110, 112, 121);
+  font-family: 'proxima_novalight';
+  margin-bottom: 0;
+  text-align: left;
+  position: absolute;
+  top: 40px;
+}
+
+.hp-feature a {
+  position: absolute;
+  top: 40px;
+}

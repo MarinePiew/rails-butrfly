@@ -1,0 +1,31 @@
+<div class="profile-header-wrapper">
+  <div class="container">
+    <div class="profile-header-infos">
+      <%= image_tag @aupair.picture, {class: "avatar-aupair "}%>
+        <h2>
+          <%= @aupair.first_name %>
+          <%= @aupair.last_name %>
+        </h2>
+        <p>
+          <%= @aupair.gender %>, <%= @aupair.nationality %></p>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="product">
+    <div class='product-body'>
+      <h3>Description</h3>
+      <p><%= @aupair.description %></p>
+    </div>
+  </div>
+  <ul class="product-controls list-inline ">
+    <li><a href="">Add to your favorites <i class="fa fa-star"></i></a></li>
+    </ul>
+</div>
+
+<div class="container text-center">
+  <a href="/ new_au_pair_booking" class="btn-medium">Send a message</a>
+</div>
+
+
