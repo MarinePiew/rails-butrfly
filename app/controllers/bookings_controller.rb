@@ -17,7 +17,7 @@ class BookingsController < ApplicationController
     if @booking.save
       redirect_to au_pairs_path,  notice: "you successfully booked your au pair, you can get in touch with her!"
     else
-      render 'au_pairs/show'
+      render 'au_pairs/show', alert: "Oups! You didn't book anybody. Have a look again!"
     end
   end
 
