@@ -1,7 +1,27 @@
+<div class="profile-header-wrapper">
+  <div class="container">
+    <div class="profile-header-infos">s
+        <h2>
+          <%= @booking.au_pair.first_name %>
+          <%= @booking.au_pair.last_name %>
+        </h2>
+        <p>
+          <%= @booking.au_pair.gender %>, <%= @booking.au_pair.nationality %></p>
+    </div>
+  </div>
+</div>
 
-  <h1><%=@booking.au_pair.first_name %></h1>
-   <h2><%=@booking.au_pair.last_name %></h2>
-  <p><%=@booking.au_pair.nationality%></p>
-     <p><%= @booking.au_pair.gender %></p>
-<%= link_to 'liste des bookings', bookings_path, class: 'btn btn-primary' %>
+<div class="container">
+  <div class="product">
+    <div class='product-body'>
+      <h3>Description</h3>
+      <p><%= @booking.au_pair.description %></p>
+    </div>
+  </div>
+</div>
 
+<div class="container text-center">
+  <a href="/ new_au_pair_booking" class="btn-medium">Send a message</a>
+<%= link_to 'Cancel booking', booking_path(@booking), method: :delete, class: "btn-medium" %>
+<%= link_to 'look for some more!', root_path, class: "btn-medium" %>
+</div>
