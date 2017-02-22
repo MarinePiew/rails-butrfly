@@ -1,0 +1,51 @@
+.profile-header-wrapper {
+  background-color: grey;
+  text-align: center;
+}
+
+.profile-header-infos h1 {
+  color: white;
+  border-radius: 20px;
+  font-size: 30px;
+}
+
+.profile-header-infos h2 {
+  color: #A59E98;
+  font-size: 25px;
+  font-weight: lighter;
+}
+
+.product {
+  display: flex;
+  align-items: center;
+  padding: 30px;
+  border-radius: 3px;
+  transition: all 0.15s ease;
+}
+
+.product-body {
+  flex: 1 1 auto;
+
+}
+.product-body h3 {
+  font-size: 22px;
+  position: relative;
+  bottom: 10px;
+}
+.product-body p {
+  font-size: 18px;
+  font-weight: lighter;
+  color: #B79D99;
+}
+
+.product-controls {
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+
+.product-controls a {
+  padding: 0 20px;
+  font-size: 17px;
+  color: #E6E6E6;
+}
