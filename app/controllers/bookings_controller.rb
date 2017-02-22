@@ -5,19 +5,13 @@ class BookingsController < ApplicationController
     @bookings = Booking.all
   end
 
-
+#update et edit a virer de la route
   def show
     @booking = Booking.find(params[:id])
   end
 
-
-
-  def edit
-
-  end
-
   def create
-    @booking = Booking.new(booking_params)
+    @booking = Booking.new()
     @booking.au_pair = User.find(params[:au_pair_id])
     @booking.family = current_user
     if @booking.save
@@ -26,11 +20,6 @@ class BookingsController < ApplicationController
       render :new
     end
   end
-
-  def update
-
-  end
-
 
   def destroy
     @booking.destroy
@@ -44,7 +33,7 @@ class BookingsController < ApplicationController
     end
 
 
-    def booking_params
-      require.params(:booking).permit(:starts_on, :ends_on)
-    end
+    # def booking_params
+    #   require.params(:booking).permit(:starts_on, :ends_on)
+    # end
 end
