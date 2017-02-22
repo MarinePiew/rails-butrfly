@@ -1,10 +1,21 @@
 
 
 <div class="banner" style="background: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('images/aupair-family.jpg');">
-  <div class="banner-content">
-    <h1>BUTRFLY</h1>
-    <p>We match the right au pair with the right family</p>
-    </div>
-      <p>What are you looking for?</p>
-      <h2>Search</h2>
+<h1>BUTRFLY</h1>
+<p>We match the right au pair with the right family</p>
+<div>
+<p>What are you looking for?</p>
+  <h2>Search</h2>
+
+  <%= simple_form_for :search, :url => au_pairs_path, :method => :get do |f| %>
+  <%= f.error_notification %>
+
+    <div class="form-inputs">
+
+<%= f.input :gender, collection: ["female", "male"], required: true %>
+<%= f.input :nationality, collection: ["Albanie", "Allemagne", "Andorre", "Autriche-Hongrie", "Belgique", "Bulgarie", "Danemark", "Espagne", "France", "Grèce", "Italie", "Liechtenstein", "Luxembourg", "Monaco", "Monténégro", "Norvège", "Pays-Bas", "Portugal", "Roumanie", "Royaume-Uni", "Russie", "Serbie", "Suède", "Suisse"] %>
+<%= f.input :category, collection: ["Family", "Au Pair"], as: :radio_buttons%>
+  </div>
+</div>
+<% end %>
 </div>
