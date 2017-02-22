@@ -8,7 +8,7 @@
         <p>What are you looking for?</p>
           <h2>Search</h2>
 
-          <%= simple_form_for (@aupairs, :url => au_pairs_path(@au_pairs)), :method => :get do |f| %>
+          <%= simple_form_for :search, :url => au_pairs_path, :method => :get do |f| %>
           <%= f.error_notification %>
 
             <div class="form-inputs">
