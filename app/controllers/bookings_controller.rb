@@ -1,5 +1,5 @@
 class BookingsController < ApplicationController
-  before_action :set_booking, only: [:show, :edit, :update, :destroy]
+  # before_action :set_booking, only: [:show, :edit, :update, :destroy]
 
   def index
     @bookings = Booking.all
@@ -7,20 +7,25 @@ class BookingsController < ApplicationController
 
 
   def show
+    @booking = Booking.find(params[:id])
   end
 
-  def new
-    @booking = Booking.new
-  end
 
 
   def edit
+
   end
 
   def create
     @booking = Booking.new(booking_params)
+    @booking.au_pair = User.find(params[:au_pair_id])
+    @booking.family = current_user
+    if @booking.save
+      redirect_to au_pairs_path
+    else
+      render :new
+    end
   end
-
 
   def update
 
@@ -29,17 +34,17 @@ class BookingsController < ApplicationController
 
   def destroy
     @booking.destroy
-    reditect_to bookings_path
+    redirect_to bookings_path
   end
 
   private
 
     def set_booking
-      @booking = Booking.find(params[:id])
+      # @booking = Booking.find(params[:id])
     end
 
 
     def booking_params
-      require.params(:booking).permit(:family_id, :au_pair_id, :starts_on, :ends_on)
+      require.params(:booking).permit(:starts_on, :ends_on)
     end
 end

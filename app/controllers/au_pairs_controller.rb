@@ -1,7 +1,7 @@
 class AuPairsController < ApplicationController
 
   def index
-  @aupair = User.au_pair
+    @aupair = User.au_pair
   end
 
 
