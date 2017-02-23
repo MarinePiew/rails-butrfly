@@ -6,9 +6,10 @@
     <h1>BUTRFLY</h1>
     <p>"We match the right au pair with the right family"</p>
   </div>
-  <div class="container-search text-center list-inline">
+
+  <div class= "container-search text-center">
     <h2>What are you looking for?</h2>
-    <%= simple_form_for :search, url: au_pairs_path, :method => 'get', html: { class: "form-inline" } do |f| %>
+    <%= simple_form_for :search, url: au_pairs_path, method: :get, html: { class: "form-inline" } do |f| %>
       <%= f.input :gender, label: false, prompt: "Gender",
       collection: ["female", "male"], required: true %>
       <%= f.input :nationality, label: false, prompt: "Nationality",
