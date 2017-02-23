@@ -10,6 +10,10 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
   enum category: [:family, :au_pair]
+
+  geocoded_by :address
+  after_validation :geocode, if: :address_changed?
+
 end
 
 
