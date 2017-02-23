@@ -1,7 +1,11 @@
-.banner {
+
+
+.banner{
   color: white;
   text-align: center;
   height: 90vh;
+  background: linear-gradient(rgba(50,50,50, 0.1), rgba(50,50,50, 0.1)), asset-url("aupair-family.jpg");
+
   /* if you have a 70px navbar => height: calc(100vh - 70px); */
   background-size: cover !important;
   display: flex;
@@ -10,22 +14,27 @@
   position: relative;
 }
 .banner h1 {
-  font-size: 50px;
+  font-size: 100px;
   font-weight: bold;
-  text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
+  color: grey
 }
 
 .banner h2 {
   font-size: 25px;
   font-weight: lighter;
   text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
+  color: grey
 }
 
 .banner p {
-  font-size: 20px;
+  font-size: 40px;
   font-weight: lighter;
-  color: rgba(255, 255, 255, 0.7);
+  color:#E53B51;
   margin-bottom: 20px;
+}
+
+.container{
+  color: white;
 }
 
 .container-search {
