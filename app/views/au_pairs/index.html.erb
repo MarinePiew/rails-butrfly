@@ -1,19 +1,22 @@
+
 <div class="container">
+  <h1>Listing of your search</h1>
   <div class="row">
     <% @aupairs.each do |aupair| %>
-    <div class="col-xs-4">
-      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('images/telechargement.jpeg'),">
+      <div class="col-xs-12 col-sm-4">
+        <div class="card">
         <div class="card-category">
-          <strong><%= aupair.last_name %></strong> <%= aupair.first_name %>
+          <%= aupair.last_name %>
         </div>
         <div class="card-description">
-          <h2><%= aupair.gender %></h2>
+          <h2><%= aupair.first_name %></h2>
+          <p><%= aupair.gender %></p>
           <p><%= aupair.nationality %></p>
         </div>
         <div class="card-user">
-          <%= image_tag "téléchargement.jpeg", class: "avatar" %>
+          <%= image_tag "telechargement.jpeg", class: "avatar" %>
         </div>
-        <%= link_to 'Let me see', au_pair_path(aupair), class: 'btn btn-primary' %>
+        <%= link_to 'Let me see', au_pair_path(aupair), class: 'card-link' %>
       </div>
     </div>
     <% end %>

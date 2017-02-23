@@ -1,11 +1,24 @@
 
-
-<h1> Here is the list <h1>
-
-<% @bookings.each do |booking| %>
-  <%= booking.au_pair.first_name %>
-  <%= booking.au_pair.first_name %>
-  <%= booking.au_pair.nationality %>
-  <%= booking.au_pair.gender %>
-  <%= link_to 'Show', booking, class: 'btn btn-primary' %>
-<% end %>
+<h1>Manage your bookings<h1>
+<div class="container">
+  <div class="row">
+    <% @bookings.each do |booking| %>
+    <div class="col-md-4">
+      <div class="card">
+         <div class="card-user">
+            <%= image_tag "telechargement.jpeg", class: "avatar" %>
+         </div>
+        <div class="card-category">
+          <%= booking.au_pair.first_name %>
+          <%= booking.au_pair.last_name %>
+        </div>
+        <div class="card-description">
+          <h2><%= booking.au_pair.nationality %></h2>
+          <p><%= booking.au_pair.gender %></p>
+        </div>
+        <%= link_to 'See details', booking, class: 'btn btn-primary' %>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</div>
