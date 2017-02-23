@@ -25,8 +25,12 @@
 
 .avatar-aupair {
   border-radius: 50%;
-  width: 120px;
-  height: 120px;
+  width: 300px;
+  height: 300px;
   object-fit: cover;
   margin-top: 30px;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+  border: white 6px solid;
 }
+
+
