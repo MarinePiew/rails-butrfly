@@ -19,10 +19,20 @@
   z-index: 1;
   width: 100%;
 }
+.navbar-title {
+font-size: 40px;
+margin-top: 10px;
 
+}
 /* Navbar logo */
 .navbar-wagon-brand img {
-  width: 50px;
+  width: 70px;
+}
+.navbar-wagon-brand {
+  text-decoration: none;
+  &:hover {
+  text-decoration: none;
+  }
 }
 
 /* Navbar right section (with form, links, button) */
@@ -41,11 +51,9 @@
 
 /* Navbar standard link */
 .navbar-wagon-link {
-  color: #616668;
   font-size: 14px;
 }
 .navbar-wagon-link:hover {
-  color: #da552f;
   text-decoration: none;
 }
 
