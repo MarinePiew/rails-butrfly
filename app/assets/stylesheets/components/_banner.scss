@@ -5,6 +5,7 @@
   text-align: center;
   height: 90vh;
   background: linear-gradient(rgba(50,50,50, 0.1), rgba(50,50,50, 0.1)), asset-url("aupair-family.jpg");
+  background-position: 30%;
 
   /* if you have a 70px navbar => height: calc(100vh - 70px); */
   background-size: cover !important;
@@ -16,14 +17,14 @@
 .banner h1 {
   font-size: 100px;
   font-weight: bold;
-  color: grey
+  color: $gray;
 }
 
 .banner h2 {
   font-size: 25px;
   font-weight: lighter;
   text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
-  color: grey
+  color: $gray;
 }
 
 .banner p {
@@ -33,21 +34,30 @@
   margin-bottom: 20px;
 }
 
-// .container{
-//   color: white;
-// }
+.container{
+  background-color: white;
+}
 
 .container-search {
   position: absolute;
-  bottom: 120px;
+  bottom: 10px;
+  background-color: white;
+  opacity: 0.8;
+
+  border-radius: 10px;
+  padding: 1px 200px;
+
+
+}
+.simple_form{
+  padding: 5px 10px;
+  margin-bottom: 20px;
 }
 
-.container-search select {
 
-}
 
 .hp-feature {
-  background-color: rgb(247, 246, 241);
+  border: 2px solid $yellow;
   border-radius: 5px;
   text-align: center;
   padding: 20px 10px;
@@ -58,15 +68,14 @@
 }
 
 .hp-feature p {
-  color: rgb(110, 112, 121);
-  font-family: 'proxima_novalight';
+  color: $gray;
   margin-bottom: 0;
   text-align: left;
   position: absolute;
-  top: 40px;
+  top: 20px;
 }
 
 .hp-feature a {
   position: absolute;
-  top: 40px;
+  top: 20px;
 }
