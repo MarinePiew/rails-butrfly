@@ -8,8 +8,7 @@ skip_before_action :authenticate_user!, only: [:index, :show]
   end
 
   def show
-
-
+    @aupair = User.find(params[:id])
   end
 
 end
