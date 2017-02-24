@@ -1,77 +1,73 @@
 <div class="profile-header-wrapper">
+    <div class="container">
+      <div class="profile-header-infos">
+        <%= image_tag "aupair2.jpg", class: "avatar-aupair" %>
+          <h2>
+            <%= @aupair.first_name %>
+            <%= @aupair.last_name %>
+            <%= @aupair.email %>
+          </h2>
+          <p>
+            <%= @aupair.gender %>, <%= @aupair.nationality %></p>
+      </div>
+    </div>
+
   <div class="container">
-    <div class="profile-header-infos">
-      <%= image_tag @aupair.picture, {class: "avatar-aupair"}%>
-        <h2>
-          <%= @aupair.first_name %>
-          <%= @aupair.last_name %>
-          <%= @aupair.email %>
-        </h2>
-        <p>
-          <%= @aupair.gender %>, <%= @aupair.nationality %></p>
-    </div>
-  </div>
-</div>
-
-<div class="container">
-  <div class="product">
-    <div class='product-body'>
-      <h3>Description</h3>
-      <p><%= @aupair.description %></p>
-    </div>
-  </div>
-</div>
-
-<div class="container text-center">
-  <button type="button" class="btn-medium white-button" data-toggle="modal" data-target="#myModal">
-    Send a message
-  </button>
-  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-          <h4 class="modal-title" id="exampleModalLabel">Send a message to <%= @aupair.first_name %></h4>
-        </div>
-        <div class="modal-body">
-          <form>
-            <div class="form-group">
-              <label for="recipient-name" class="control-label">Your name :</label>
-              <input type="text" class="form-control" id="recipient-name">
-            </div>
-            <div class="form-group">
-              <label for="message-text" class="control-label">Your email :</label>
-              <textarea class="form-control" id="message-text"></textarea>
-            </div>
-          </form>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn-medium" data-dismiss="modal">Close</button>
-          <button type="button" class="btn-medium">Send</button>
-        </div>
+    <div class="product">
+      <div class='product-body'>
+        <h3>Description</h3>
+        <p><%= @aupair.description %></p>
       </div>
     </div>
   </div>
-  <ul class="product-controls list-inline ">
-    <li><a href="">Add to your favorites <i class="fa fa-star"></i></a></li>
-    <li><%= link_to 'back to list', au_pairs_path, class: "btn-medium" %></li>
-    <li><%= link_to 'Booking', au_pair_bookings_path(@aupair), method: :post, class: 'btn-medium' %></li>
-  </ul>
-</div>
-  <%= link_to 'Booking', au_pair_bookings_path(@aupair), method: :post, class: 'btn-medium' %>
-  <%= link_to 'Add to your favorites',au_pairs_path, class: "fa fa-star btn-medium"  %>
-  <%= link_to 'Back to list', au_pairs_path, class: "btn-medium" %>
-</div>
 
-<div class="container reviews">
-<h1>Reviews</h1>
-  <% if @aupair.reviews.blank? %>
-    Be the first to leave a review for <%= @aupair.first_name %>
-  <% else %>
-    <% @aupair.reviews.each do |review| %>
-      <%= render 'reviews/show', review: review %>
-      <hr>
-    <% end %>
-  <% end %>
-  <%= render 'reviews/form', au_pair: @aupair, review: @review %>
+  <div class="container text-center">
+    <button type="button" class="btn-medium white-button" data-toggle="modal" data-target="#myModal">
+      Send a message
+    </button>
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="exampleModalLabel">Send a message to <%= @aupair.first_name %></h4>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="form-group">
+                <label for="recipient-name" class="control-label">Your name :</label>
+                <input type="text" class="form-control" id="recipient-name">
+              </div>
+              <div class="form-group">
+                <label for="message-text" class="control-label">Your email :</label>
+                <textarea class="form-control" id="message-text"></textarea>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn-medium white-button" data-dismiss="modal">Close</button>
+            <button type="button" class="btn-medium white-button">Send</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <%= link_to 'Booking', au_pair_bookings_path(@aupair), method: :post, class: "btn-medium" %>
+    <%= link_to 'Add to your favorites',au_pairs_path, class: "fa fa-star btn-medium"  %>
+    <%= link_to 'Back to list', au_pairs_path, class: "btn-medium" %>
+    </div>
+  </div>
+
+  <div class="container reviews">
+    <h1>Reviews</h1>
+    <div id="reviews">
+      <% if @aupair.reviews.blank? %>
+        Be the first to leave a review for <%= @aupair.first_name %>
+      <% else %>
+        <% @aupair.reviews.each do |review| %>
+          <%= render 'reviews/show', review: review %>
+        <% end %>
+      <% end %>
+    </div>
+    <%= render 'reviews/form', au_pair: @aupair, review: @review %>
+  </div>
 </div>
