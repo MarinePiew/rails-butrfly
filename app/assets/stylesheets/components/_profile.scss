@@ -1,5 +1,5 @@
 .profile-header-wrapper {
-  background-color: grey;
+  background-color: $green;
   text-align: center;
 }
 
@@ -10,7 +10,7 @@
 }
 
 .profile-header-infos h2 {
-  color: #A59E98;
+  color: rgb(86, 98, 117);
   font-size: 25px;
   font-weight: lighter;
 }
@@ -35,7 +35,7 @@
 .product-body p {
   font-size: 18px;
   font-weight: lighter;
-  color: #B79D99;
+  color: rgb(86, 98, 117);
 }
 
 .product-controls {
