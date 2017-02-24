@@ -19,9 +19,24 @@
   </div>
 </div>
 
-<div class="container google-maps">
-
-
+<div class='container-google-maps'>
+  <div id="map" class="col-xs-6" style="width: 50%; height: 600px;"></div>
+      <% content_for(:after_js) do %>
+        <%= javascript_tag do %>
+          $(document).ready(function() {
+            var handler = Gmaps.build('Google');
+            handler.buildMap({ internal: { id: 'map' } }, function() {
+              markers = handler.addMarkers(<%= raw @hash.to_json %>);
+              handler.bounds.extendWith(markers);
+              handler.fitMapToBounds();
+                handler.getMap().setZoom(4);
+            });
+          });
+      <% end %>
+  <% end %>
+  <div style="width: 50%;">
+    <h1> Lorem ipsum dolor sit amet, consectetur adipisicing elit. A voluptatibus reiciendis, nihil, ducimus ab rem ratione esse magni quidem velit, sequi porro pariatur modi cupiditate dolore autem deserunt dicta itaque.</h1>
+  </div>
 </div>
 
 
