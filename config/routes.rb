@@ -4,7 +4,8 @@ Rails.application.routes.draw do
 
   resources :au_pairs, only: [:index, :show] do
     resources :bookings, only: [:new, :create]
-end
+    resources :reviews, only: :create
+  end
 
   root to: 'pages#home'
 end
