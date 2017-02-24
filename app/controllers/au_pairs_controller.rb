@@ -9,6 +9,7 @@ skip_before_action :authenticate_user!, only: [:index, :show]
 
   def show
     @aupair = User.find(params[:id])
+    @review = Review.new
   end
 
 end
