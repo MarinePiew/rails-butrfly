@@ -63,3 +63,13 @@
 </div>
 
 
+<div id="reviews">
+  <% if @aupair.reviews.blank? %>
+    Be the first to leave a review for <%= @aupair.first_name %>
+  <% else %>
+    <% @aupair.reviews.each do |review| %>
+      <%= render 'reviews/show', review: review %>
+    <% end %>
+  <% end %>
+</div>
+
