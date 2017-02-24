@@ -5,9 +5,15 @@ class ReviewsController < ApplicationController
     @review = Review.new(review_params)
     @review.aupair = @aupair
     if @review.save
-      redirect_to au_pair_path(@aupair)
+      respond_to do |format|
+        format.html { redirect_to restaurant_path(@restaurant) }
+        format.js  # <-- will render `app/views/reviews/create.js.erb`
+      end
     else
-      render 'au_pairs/show'
+      respond_to do |format|
+        format.html { render 'au_pairs/show' }
+        format.js
+      end
     end
   end
 
