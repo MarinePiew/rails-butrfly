@@ -1,4 +1,4 @@
-<%= simple_form_for([ au_pair, review ], remote: true) do |form| %>
+<%= simple_form_for([ au_pair, review ], remote: true, url: au_pair_reviews_path(au_pair), method: :post) do |form| %>
   <%= form.input :content %>
   <%= form.button :submit %>
 <% end %>

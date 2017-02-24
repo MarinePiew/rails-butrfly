@@ -16,5 +16,3 @@ user = User.new(
 user.save
 end
 
-
-

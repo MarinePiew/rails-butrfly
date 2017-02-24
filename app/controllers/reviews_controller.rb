@@ -1,9 +1,9 @@
 class ReviewsController < ApplicationController
 
   def create
-    @aupair = User.find(params[:id])
+    @aupair = User.find(params[:au_pair_id])
     @review = Review.new(review_params)
-    @review.aupair = @aupair
+    @review.au_pair = @aupair
     if @review.save
       respond_to do |format|
         format.html { redirect_to restaurant_path(@restaurant) }
