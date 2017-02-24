@@ -2,7 +2,7 @@
 <div class="container-index">
   <div class="row">
     <% @aupairs.each do |aupair| %>
-    <div class="col-xs-13 col-md-6">
+    <div class="col-xs-12 col-md-6">
       <div class="card-aupair">
       <%= image_tag "aupair.jpg", class: "card-user-picture avatar-aupair" %>
       <%= link_to '', au_pair_path(aupair), class: 'card-link-aupair' %>
@@ -14,7 +14,7 @@
         </div>
       </div>
 
-      <div class="card-description-pair">
+      <div class="card-description-pair"> #fixec height et text overflow elipsis
         <p>"<%= aupair.description %>"</p>
         <div class="list-inline">
           <i class="fa fa-star"></i>
