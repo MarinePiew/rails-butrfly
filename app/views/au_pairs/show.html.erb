@@ -5,6 +5,7 @@
         <h2>
           <%= @aupair.first_name %>
           <%= @aupair.last_name %>
+          <%= @aupair.email %>
         </h2>
         <p>
           <%= @aupair.gender %>, <%= @aupair.nationality %></p>
@@ -22,7 +23,7 @@
 </div>
 
 <div class="container text-center">
-<button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal">
+<button type="button" class="btn-medium" data-toggle="modal" data-target="#myModal">
     Send a message
   </button>
 
@@ -52,14 +53,10 @@
       </div>
     </div>
   </div>
-  <%= link_to 'Booking', au_pair_bookings_path(@aupair), method: :post, class: 'btn btn-primary' %>
   <ul class="product-controls list-inline ">
     <li><a href="">Add to your favorites <i class="fa fa-star"></i></a></li>
-    </ul>
+    <li><%= link_to 'back to list', au_pairs_path, class: "btn-medium" %></li>
+    <li><%= link_to 'Booking', au_pair_bookings_path(@aupair), method: :post, class: 'btn-medium' %></li>
+  </ul>
 </div>
-  <a href="/ new_au_pair_booking" class="btn-medium">Send a message</a>
-<%= link_to 'Booking', au_pair_bookings_path(@aupair), method: :post, class: "btn-medium" %>
-<%= link_to 'back to list', au_pairs_path, class: "btn-medium" %>
-</div>
-
 
