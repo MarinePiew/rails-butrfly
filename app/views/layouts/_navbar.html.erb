@@ -7,22 +7,16 @@
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
 
-    <!-- Search form -->
-
-    <!-- Different navigation if login or not -->
     <% if user_signed_in? %>
-
-      <!-- Notification -->
 
       <!-- Profile picture and dropdown -->
       <div class="navbar-wagon-item">
         <div class="dropdown">
-        <% if current_user.picture %>
-          <%= cl_image_tag current_user.picture, crop: :fill, height: 50, width: 50, class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
-        <% else %>
-          <%= image_tag 'nopict.png', class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
-        <% end %>
-
+          <% if current_user.picture.present? %>
+            <%= cl_image_tag current_user.picture, crop: :fill, height: 50, width: 50, class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
+          <% else %>
+            <%= image_tag 'nopict', class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
+          <% end %>
           <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
             <li>
               <%= link_to edit_user_registration_path do %>
@@ -47,10 +41,10 @@
 
       <!-- Login text link -->
       <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to t(".new_user_registration", default: "Sign up"), new_user_registration_path, class: "navbar-wagon-item navbar-wagon-button btn" %>
 
     <% end %>
 
     <!-- Button (call-to-action) -->
-    <%= link_to t(".new_user_registration", default: "Sign up"), new_user_registration_path, class: "navbar-wagon-item navbar-wagon-button btn" %>
   </div>
 </div>

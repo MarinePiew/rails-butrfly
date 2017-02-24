@@ -1,32 +1,21 @@
 <h1 class= "text-center">Listing of your search</h1>
-<div class="container-index">
+
+<div class="container">
   <div class="row">
     <% @aupairs.each do |aupair| %>
-    <div class="col-xs-13 col-md-6">
-      <div class="card-aupair">
-      <%= image_tag "aupair.jpg", class: "card-user-picture avatar-aupair" %>
-      <%= link_to '', au_pair_path(aupair), class: 'card-link-aupair' %>
-
-      <div class="card-category-pair">
-        <div class="list-inline">
-          <li><i class="fa fa-venus" aria-hidden="true"></i></li>
-          <li><h2><%= aupair.first_name %></h2></li>
-          <li><p><%= aupair.nationality %></p></li>
+      <div class="col-xs-12 col-sm-6">
+        <div class="card-aupair">
+          <%= image_tag "aupair.jpg", class: "card-user-picture avatar-aupair" %>
+          <%= link_to '', au_pairs_path(aupair), class: 'card-link-aupair' %>
+          <div class="card-category-pair">
+            <h2><%= aupair.first_name %></h2>
+            <p><%= aupair.nationality %></p>
+          </div>
+          <div class="card-description-pair">
+            <p><%= aupair.description %></p>
+          </div>
         </div>
       </div>
-
-      <div class="card-description-pair">
-        <p>"<%= aupair.description %>"</p>
-        <div class="list-inline">
-          <i class="fa fa-star"></i>
-          <i class="fa fa-star"></i>
-          <i class="fa fa-star"></i>
-          <i class="fa fa-star"></i>
-        </div>
-      </div>
-
-      </div>
-    </div>
     <% end %>
   </div>
 </div>
