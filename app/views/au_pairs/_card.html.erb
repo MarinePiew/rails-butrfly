@@ -1,0 +1,15 @@
+
+<div class="col-xs-12 col-sm-6">
+  <div class="card-aupair">
+    <%= image_tag "aupair2.jpg", class: "card-user-picture avatar-aupair" %>
+    <%= link_to '', au_pair_path(aupair), class: 'card-link-aupair' %>
+    <div class="card-category-pair">
+      <h2><%= aupair.first_name %></h2>
+      <p><%= aupair.nationality %></p>
+    </div>
+    <div class="card-description-pair">
+      <p><%= aupair.description.first(250) %>...</p>
+    </div>
+  </div>
+</div>
+

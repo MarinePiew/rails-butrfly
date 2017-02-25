@@ -33,7 +33,6 @@ class BookingsController < ApplicationController
       # @booking = Booking.find(params[:id])
     end
 
-
     # def booking_params
     #   require.params(:booking).permit(:starts_on, :ends_on)
     # end
