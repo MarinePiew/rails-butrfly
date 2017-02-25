@@ -1,27 +1,59 @@
+
+
 <div class="profile-header-wrapper">
+    <div class="container">
+      <div class="profile-header-infos">
+        <%= image_tag "aupair2.jpg", class: "avatar-aupair" %>
+          <h2>
+            <%= @booking.au_pair.first_name %>
+            <%= @booking.au_pair.last_name %>
+          </h2>
+          <p>
+            <%= @booking.au_pair.gender %>, <%= @booking.au_pair.nationality %></p>
+      </div>
+    </div>
+
   <div class="container">
-    <div class="profile-header-infos">s
-        <h2>
-          <%= @booking.au_pair.first_name %>
-          <%= @booking.au_pair.last_name %>
-        </h2>
-        <p>
-          <%= @booking.au_pair.gender %>, <%= @booking.au_pair.nationality %></p>
+    <div class="product">
+      <div class='product-body'>
+        <h3>Description</h3>
+        <p><%= @booking.au_pair.description %></p>
+      </div>
     </div>
   </div>
-</div>
 
-<div class="container">
-  <div class="product">
-    <div class='product-body'>
-      <h3>Description</h3>
-      <p><%= @booking.au_pair.description %></p>
+  <div class="container text-center">
+    <button type="button" class="btn-medium white-button" data-toggle="modal" data-target="#myModal">
+      Send a message
+    </button>
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="exampleModalLabel">Send a message to <%= @booking.au_pair.first_name %></h4>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="form-group">
+                <label for="recipient-name" class="control-label">Your name :</label>
+                <input type="text" class="form-control" id="recipient-name">
+              </div>
+              <div class="form-group">
+                <label for="message-text" class="control-label">Your email :</label>
+                <textarea class="form-control" id="message-text"></textarea>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn-medium white-button" data-dismiss="modal">Close</button>
+            <button type="button" class="btn-medium white-button">Send</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <%= link_to 'Back to list', bookings_path, class: "btn-medium" %>
+    <%= link_to 'Cancel booking', booking_path(@booking), method: :delete, class: "btn-medium" %>
+    <%= link_to 'look for some more!', root_path, class: "btn-medium" %>
     </div>
   </div>
-</div>
-
-<div class="container text-center">
-  <a href="/ new_au_pair_booking" class="btn-medium">Send a message</a>
-<%= link_to 'Cancel booking', booking_path(@booking), method: :delete, class: "btn-medium" %>
-<%= link_to 'look for some more!', root_path, class: "btn-medium" %>
-</div>

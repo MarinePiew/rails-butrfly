@@ -4,7 +4,7 @@
 <div class="container">
   <div class="row">
     <% @bookings.each do |booking| %>
-      <%= render 'au_pairs/card', aupair: booking.au_pair %>
+      <%= render 'bookings/card_booking', aupair: booking.au_pair, booking: booking %>
     <% end %>
   </div>
 </div>
